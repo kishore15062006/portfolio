@@ -1,0 +1,229 @@
+.resume-page {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background tech/glow effects */
+.resume-page::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.resume-page::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Header */
+.resume-header {
+  position: sticky;
+  top: 0;
+  height: 70px;
+  background: rgba(var(--color-bg-rgb, 10, 10, 15), 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 10;
+}
+
+.resume-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 14px;
+  transition: var(--transition);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.back-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-border);
+  background: var(--color-accent-glow);
+}
+
+.resume-header-center h1 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.resume-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-accent);
+  color: white !important;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--color-accent-glow);
+  transition: var(--transition);
+}
+
+.download-btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--color-accent-glow);
+}
+
+/* Content Area */
+.resume-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  z-index: 2;
+  height: calc(100vh - 70px);
+}
+
+.pdf-viewer-container {
+  padding:10px;
+  width: 125vh;
+  max-width: 1000px;
+  height: 158vh;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease;
+}
+
+.pdf-viewer-container:hover {
+  border-color: var(--color-accent);
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Fallback Card for Mobile/Failed loads */
+.resume-fallback {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+}
+
+.fallback-icon {
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+.resume-fallback h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: var(--color-text-primary);
+}
+
+.resume-fallback p {
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.fallback-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.fallback-actions .btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .resume-header {
+    padding: 0 1rem;
+  }
+
+  .resume-header-center h1 {
+    font-size: 16px;
+  }
+
+  .back-btn span,
+  .download-btn span {
+    display: none;
+  }
+
+  .back-btn,
+  .download-btn {
+    padding: 10px;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+  }
+
+  .resume-content {
+    padding: 1rem;
+    height: auto;
+    min-height: calc(100vh - 70px);
+  }
+
+  /* Force display fallback card on mobile instead of iframe, since mobile browsers don't render inline PDFs well */
+  .pdf-viewer-container {
+    display: none;
+  }
+
+  .resume-fallback {
+    display: flex;
+  }
+}
