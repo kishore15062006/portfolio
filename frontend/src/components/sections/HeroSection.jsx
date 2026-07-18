@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
+import FloatingLines from '../ui/FloatingLines'
+import ShapeGrid from '../ui/ShapeGrid'
+import { useTheme } from '../../context/ThemeContext'
 import './HeroSection.css'
 
 export default function HeroSection() {
+  const { theme } = useTheme()
   const [showArrow, setShowArrow] = useState(true)
+
+  // Dark: indigo → violet → cyan — matches site accent palette
+  const darkLineGradient = ['#4F46E5', '#7C3AED', '#06B6D4', '#E0F2FE']
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,9 +48,35 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="hero-section">
-      {/* Aurora Background - requires ReactBits */}
-      {/* Replace with actual Aurora component when jsrepo is installed */}
-      <div className="hero-bg-placeholder"></div>
+      {/* Theme-adaptive WebGL Background */}
+      <div className="hero-ferrofluid-bg" style={{ pointerEvents: theme === 'dark' ? 'none' : 'auto', zIndex: 0 }}>
+        {theme === 'dark' ? (
+          <FloatingLines
+            linesGradient={darkLineGradient}
+            enabledWaves={['top', 'middle', 'bottom']}
+            lineCount={[8, 12, 16]}
+            lineDistance={[8, 6, 4]}
+            bendRadius={5.0}
+            bendStrength={-0.5}
+            animationSpeed={0.8}
+            interactive={true}
+            parallax={true}
+            parallaxStrength={0.15}
+            mixBlendMode="screen"
+          />
+        ) : (
+          // Light theme: animated square grid — sharp, geometric, on-brand
+          <ShapeGrid
+            direction="diagonal"
+            speed={0.4}
+            squareSize={44}
+            borderColor="rgba(79, 70, 229, 0.65)"
+            hoverFillColor="rgba(79, 70, 229, 0.35)"
+            shape="square"
+            hoverTrailAmount={6}
+          />
+        )}
+      </div>
 
       <motion.div
         className="hero-content"
@@ -70,7 +103,10 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Tagline */}
-        <motion.p className="hero-tagline" variants={itemVariants}>
+        <motion.p
+          className={`hero-tagline${theme === 'dark' ? ' hero-tagline--glass' : ''}`}
+          variants={itemVariants}
+        >
           I build fast, scalable, secure Full Stack Applications with clean React UIs on the frontend,
           robust Spring Boot APIs with JWT Authentication and Authorization on the backend, powered by MySQL or MongoDB.
         </motion.p>

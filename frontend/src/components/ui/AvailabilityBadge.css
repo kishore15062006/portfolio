@@ -4,7 +4,7 @@
   gap: 8px;
   padding: 8px 16px;
   background: var(--color-success-bg);
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid var(--color-success);
 }
 
@@ -12,7 +12,7 @@
   width: 8px;
   height: 8px;
   background: var(--color-success);
-  border-radius: 50%;
+  border-radius: 0;
   position: relative;
   flex-shrink: 0;
 }
@@ -21,7 +21,7 @@
   content: '';
   position: absolute;
   inset: -3px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--color-success);
   opacity: 0.4;
   animation: pulse 1.5s ease-in-out infinite;

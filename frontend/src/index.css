@@ -134,7 +134,7 @@ a:hover {
   color: var(--color-accent);
   font-size: 12px;
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: 0;
   font-family: 'JetBrains Mono', monospace;
   white-space: nowrap;
   display: inline-block;
@@ -190,7 +190,7 @@ select:focus {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
-  border-radius: 3px;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {

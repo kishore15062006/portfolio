@@ -67,7 +67,9 @@ export default function Navbar() {
     >
       {/* Left: Logo */}
       <div className="navbar-logo" onClick={handleLogoClick} role="button" tabIndex={0}>
-        <div className="logo-initials">FS</div>
+        <div className="logo-initials">
+          <img src="/neon_k_logo.svg" alt="K logo" className="logo-img" />
+        </div>
       </div>
 
       {/* Center: Navigation Links (Desktop) */}
@@ -88,7 +90,7 @@ export default function Navbar() {
         <AvailabilityBadge />
         <ThemeToggle />
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/kishore15062006"
           target="_blank"
           rel="noopener noreferrer"
           className="nav-icon-btn"

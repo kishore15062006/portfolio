@@ -8,16 +8,11 @@
   padding-top: 64px;
 }
 
-.hero-bg-placeholder {
+.hero-ferrofluid-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    var(--color-bg) 0%,
-    rgba(108, 99, 255, 0.1) 50%,
-    var(--color-bg) 100%
-  );
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -67,7 +62,7 @@
   background: var(--color-card);
   border: 1px solid var(--color-border);
   padding: 6px 16px;
-  border-radius: 999px;
+  border-radius: 0;
   font-size: 14px;
   font-family: 'JetBrains Mono', monospace;
   color: var(--color-text-primary);
@@ -87,6 +82,21 @@
   line-height: 1.7;
 }
 
+/* Dark mode: glass panel so tagline stays legible over the FloatingLines shader */
+.hero-tagline--glass {
+  background: rgba(6, 4, 20, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-left: 3px solid var(--color-accent);
+  padding: 18px 24px;
+  color: #ddd8ff;
+  box-shadow:
+    0 0 0 1px rgba(108, 99, 255, 0.08) inset,
+    0 8px 32px rgba(0, 0, 0, 0.45);
+  text-align: left;
+}
+
 .hero-buttons {
   display: flex;
   gap: 16px;
@@ -97,7 +107,7 @@
 
 .btn {
   padding: 14px 32px;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 16px;
   font-weight: 500;
   border: none;

@@ -1,49 +1,46 @@
 /**
- * experience.js - Timeline entries for work, education, and projects
+ * experience.js - Timeline entries for work and personal projects
  */
 
 const experience = [
   {
     id: 1,
-    type: 'work', // "work" | "education" | "project"
-    company: 'TODO: Company Name',
-    role: 'TODO: Full Stack Developer Intern',
-    period: 'TODO: Jan 2024 – Present',
-    location: 'TODO: City, India',
+    type: 'work',
+    company: 'Freelance',
+    role: 'Full Stack Developer',
+    period: 'June 2025 – Present',
+    location: 'Coimbatore, India',
     bullets: [
-      'TODO: Built a REST API with Spring Boot handling X daily requests',
-      'TODO: Developed React dashboard reducing manual reporting time by 40%',
-      'TODO: Designed MySQL schema with 10+ normalised tables',
+      'Developed production-grade software projects end to end, managing requirements, design, development, testing, and deployment phases independently.',
+      'Developed a full-stack agriculture marketplace built with React, Spring Boot, and MySQL, connecting farmers with buyers and delivery agents through a secure, role-based system across three user roles (Farmer, Buyer, Delivery Agent).',
     ],
-    tech: ['React', 'Spring Boot', 'MySQL', 'Git'],
+    tech: ['React', 'Spring Boot', 'MySQL', 'JWT', 'Spring Security'],
   },
   {
     id: 2,
-    type: 'project',
-    company: 'Personal Project',
-    role: 'Full Stack Developer',
-    period: 'TODO: Aug 2023 – Dec 2023',
-    location: 'Remote',
+    type: 'work',
+    company: 'Software Developer Intern',
+    role: 'Software Developer Intern',
+    period: 'April – May 2026',
+    location: '',
     bullets: [
-      'TODO: Built and deployed a full-stack e-commerce application',
-      'TODO: Implemented JWT authentication with role-based access control',
-      'TODO: Integrated Stripe payment gateway for real transactions',
+      'Assisted in building and testing full-stack features for a live web application, working with REST APIs, database integration, and Agile development practices under senior developer guidance.',
     ],
-    tech: ['React', 'Spring Boot', 'MySQL', 'JWT', 'Stripe'],
+    tech: ['REST APIs', 'Spring Boot', 'MySQL', 'Agile'],
   },
   {
     id: 3,
-    type: 'education',
-    company: 'TODO: University Name',
-    role: 'TODO: B.E. / B.Tech in Computer Science',
-    period: 'TODO: 2021 – 2025',
-    location: 'TODO: City, India',
+    type: 'project',
+    company: 'Personal Projects',
+    role: 'Full Stack Developer',
+    period: '2024 – Present',
+    location: '',
     bullets: [
-      'TODO: Relevant courses: Data Structures, DBMS, Operating Systems, Web Development',
-      'TODO: CGPA: X.X / 10',
-      'TODO: Notable achievement or club',
+      'IT-Helpdesk Attendance Management System — Full-stack attendance tracking system for IT-Helpdesk employees with role-based access control built with React, Spring Boot, and MySQL.',
+      'Online Course Learning System — Feature-complete LMS with role-based dashboards, quizzes, progress tracking, and JWT-secured REST APIs built with React, Redux Toolkit, Spring Boot, and MySQL.',
+      'Farmer-to-Consumer Marketplace Platform — Multi-role agriculture marketplace with real-time ordering, delivery tracking, and admin analytics powered by Spring Boot, Spring Security, and MySQL.',
     ],
-    tech: [],
+    tech: ['React', 'Redux Toolkit', 'Spring Boot', 'Spring Security', 'JWT', 'MySQL'],
   },
 ]
 
